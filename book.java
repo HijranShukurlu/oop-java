@@ -1,3 +1,22 @@
+/**
+ * UML Diagram Representation:
+ * 
+ *  +----------------------+
+ *  |        Book         |
+ *  +----------------------+
+ *  | - title: String      |
+ *  | - author: String     |
+ *  | - publicationYear: int |
+ *  | - genre: String      |
+ *  | - price: double      |
+ *  +----------------------+
+ *  | + Book(String, String, int, String, double) |
+ *  | + displayDetails(): void                    |
+ *  | + applyDiscount(double): void               |
+ *  | + isClassic(): boolean                      |
+ *  +----------------------+
+ */
+
 class Book {
     // Attributes
     private String title;
