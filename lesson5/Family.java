@@ -6,6 +6,14 @@ public class Family {
     private Human[] children=new Human[0];
     private Pet pet;
 
+    static {
+        System.out.println("Loading class: Family");
+    }
+
+    {
+        System.out.println("Creating a new Family object");
+    }
+
     public Family(Human mother,Human father){
         this.mother=mother;
         this.father=father;
