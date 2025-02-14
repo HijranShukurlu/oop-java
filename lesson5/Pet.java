@@ -8,6 +8,14 @@ public class Pet {
     private int trickLevel;
     private String[] habits;
 
+    static {
+        System.out.println("Loading class: Pet");
+    }
+
+    {
+        System.out.println("Creating a new Pet object");
+    }
+
     public Pet(String species,String nickname){
         this.species=species;
         this.nickname=nickname;
