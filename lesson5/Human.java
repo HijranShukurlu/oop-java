@@ -10,6 +10,14 @@ public class Human {
     private String[][] schedule;
     private Family family;
 
+    static {
+        System.out.println("Loading class: Human");
+    }
+
+    {
+        System.out.println("Creating a new Human object");
+    }
+
     public Human(String name,String surname,int year){
         this.name=name;
         this.surname=surname;
