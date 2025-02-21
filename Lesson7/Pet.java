@@ -1,11 +1,22 @@
-class Pet {
-    private Species species;
+import java.util.Arrays;
+import java.util.Objects;
+
+public class Pet {
+    private String species;
     private String nickname;
     private int age;
     private int trickLevel;
     private String[] habits;
 
-    public Pet(Species species, String nickname, int age, int trickLevel, String[] habits) {
+    static {
+        System.out.println("Loading class: Pet");
+    }
+
+    {
+        System.out.println("Creating a new Pet object");
+    }
+
+    public Pet(String species, String nickname, int age, int trickLevel, String[] habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -13,7 +24,13 @@ class Pet {
         this.habits = habits;
     }
 
-    public void finalize() {
-        System.out.println("Pet object is being removed: " + nickname);
+    public void eat() {
+        System.out.println("I am eating.");
+    }
+    public void respond() {
+        System.out.printf("Hello, owner. I am %s. I miss you.%n", this.nickname);
+    }
+    public void foul() {
+        System.out.println("I need to cover it up.");
     }
 }
