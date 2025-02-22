@@ -11,23 +11,18 @@ public class Family {
         this.father = father;
     }
 
-    public void finalize() {
-        System.out.println("Family object is being deleted");
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     public void addChild(Human child) {
         children = Arrays.copyOf(children, children.length + 1);
         children[children.length - 1] = child;
         child.setFamily(this);
-    }
-
-    public boolean deleteChild(Human child) {
-        for (int i = 0; i < children.length; i++) {
-            if (children[i].equals(child)) {
-                return deleteChild(i);
-            }
-        }
-        return false;
     }
 
     public boolean deleteChild(int index) {
@@ -42,7 +37,27 @@ public class Family {
         return true;
     }
 
+    public boolean deleteChild(Human child) {
+        for (int i = 0; i < children.length; i++) {
+            if (children[i].equals(child)) {
+                return deleteChild(i);
+            }
+        }
+        return false;
+    }
+
     public int countFamily() {
         return 2 + children.length;
+    }
+
+    @Override
+    public String toString() {
+        return "Family members: {Mother=" + mother + ", Father=" + father + ", Children=" + Arrays.toString(children) + ", pet=" + pet + "}";
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Family object is being garbage collected: " + this);
+        super.finalize();
     }
 }
