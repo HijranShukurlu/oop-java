@@ -1,7 +1,7 @@
 public enum Species {
-    DOG(true, 4, true),
+    DOG(false, 4, true),
     CAT(false, 4, true),
-    PARROT(true, 2, false),
+    BIRD(true, 2, false),
     FISH(false, 0, false);
 
     private final boolean canFly;
@@ -12,5 +12,17 @@ public enum Species {
         this.canFly = canFly;
         this.numberOfLegs = numberOfLegs;
         this.hasFur = hasFur;
+    }
+
+    public boolean canFly() {
+        return canFly;
+    }
+
+    public int getNumberOfLegs() {
+        return numberOfLegs;
+    }
+
+    public boolean hasFur() {
+        return hasFur;
     }
 }
